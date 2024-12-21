@@ -82,4 +82,8 @@ header{
     margin-top: 10vh;
 }
 
+#stop.hover{
+    cursor: pointer;
+}
+
 

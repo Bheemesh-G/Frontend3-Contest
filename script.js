@@ -66,13 +66,20 @@ const countdown = setInterval(() => {
         resetButton.style.borderRadius = "10px";
         resetButton.style.border = "none";
         resetButton.style.height = "3vh";
-        resetButton.style.fontSize="large"
+        resetButton.style.fontSize="large";
+
+        resetButton.addEventListener("mouseover", () => {
+            resetButton.style.cursor = "pointer"; 
+        });
+        
+        resetButton.addEventListener("mouseout", () => {
+            resetButton.style.cursor = "default"; 
+        });
+
         item.appendChild(resetButton);
-
         resetButton.addEventListener("click",()=>{
-            listItem.remove();
+            item.remove();
         })
-
         return;
     }
 
@@ -82,11 +89,11 @@ const countdown = setInterval(() => {
 }, 1000);
 
 
-const deleteButton = document.getElementById("deleteButton");
-deleteButton.addEventListener("click", () => {
-    clearInterval(countdown);
-    listItem.remove(); 
-});
+const deleteButton = listItem.querySelector("#deleteButton");
+    deleteButton.addEventListener("click", () => {
+        clearInterval(countdown);
+        listItem.remove();
+    });
 
 
 });
